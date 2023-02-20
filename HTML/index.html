@@ -1,0 +1,580 @@
+<html>
+    <head>
+    <title>
+        Tokullectibles
+    </title>
+    <link rel="icon" href="../Img/logo-blue_140x@2x.avif" type="image/icon type">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+        nav{
+            display:flex;
+            width: 100%;
+            background: #0099ff;
+            position:relative ;
+            justify-content:space-between;
+            text-align: center;
+            padding: 15px 30px;
+        }
+        nav .icon{
+            font-size: 35px;
+            font-weight: 800px;
+            color:#ffff;
+            cursor: pointer;
+        }
+        nav ol{
+            display: flex;
+            list-style: none;
+            margin: auto 0;
+        }
+        nav ol li{
+            margin: 0 2px;
+        }
+        nav ol li a{
+            color: #ffff;
+            font-size: 20px;
+            text-decoration: none;
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            padding: 5px 10px ;
+        }
+        nav ol li:hover a{
+            background: #ffff;
+            color: #0099ff;
+        }
+        nav .search_box{
+            display: flex;
+            margin: auto;
+            height: 35px;
+            line-height: 35px;
+        }
+        nav .search_box input{
+            border: none;
+            outline: none;
+            background: #ffff;
+            height: 100%;
+            padding:0 10px;
+            font-size: 20px;
+            width: 350px;
+        }
+        nav .search_box span{
+            color: #0099ff;
+            font-size: 20px;
+            background-color: #ffff;
+            height: 100%;
+            padding: 8px;
+            position: relative;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .body2{
+            margin: 0;
+            padding: 0;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+        }
+        .slider{
+            width: 1000%;
+            height: 700px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .slides{
+            width: 500%;
+            height: 500px;
+            display: flex;
+        }
+        .slides input{
+            display: none;                                                                                    
+        }
+        .slide{
+            width: 20%;
+            transition: 2s;
+        }
+        .slide img{
+            width: 100%;
+            height: 700px;
+        }
+        .nav_manual{
+            position: absolute;
+            width: 100%;
+            margin-top: 650px;
+            display: flex;
+            justify-content: center;
+        }
+        .manual-btn{
+            border: 2px solid #0099ff;
+            padding: 5px;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: 1s;
+        }
+        .manual-btn:not(:last-child){
+            margin-right: 40px;
+        }
+        .manual-btn:hover{
+            background: #0099ff ;
+        }
+        #radio1:checked ~ .first{
+        margin-left: 0;
+        }
+        #radio2:checked ~ .first{
+        margin-left: -20%;
+        }
+        #radio3:checked ~ .first{
+        margin-left: -40%;
+        }
+        #radio4:checked ~ .first{
+        margin-left: -60%;
+        }
+        .nav-auto{
+            position: absolute;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            margin-top: 650px;
+        }
+        .nav-auto div{
+            border: 2px solid #0099ff;
+            padding: 5px;
+            border-radius: 10px;
+            transition: 1s; 
+        }
+        .nav-auto div:not(:last-child){
+            margin-right: 40px;
+        }
+        #radio1:checked ~ .nav-auto.auto-btn{
+            background: #0099ff;
+        }
+        #radio2:checked ~ .nav-auto.auto-btn{
+            background: #0099ff;
+        }
+        #radio3:checked ~ .nav-auto.auto-btn{
+            background: #0099ff;
+        }
+        #radio4:checked ~ .nav-auto.auto-btn{
+            background: #0099ff;
+        }
+        #categories{
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            margin: 20px 0px 50px 0px;
+            flex-direction: column;
+            }
+            #categories h2{
+                font-weight: 500;
+                padding: 2px 20px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin: 20px 0px;
+                border: 1px solid #0099ff;
+            }
+            .category-container{
+                display: flex;
+                margin: auto;
+                width:1200px;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                border: 1px solid #0099ff;
+                background-color: #fff;
+            }
+            .category-box{
+                position: relative;
+                padding: 20px;
+            }
+            .category-box img{
+                width: 220px;
+                height: 220px;
+                object-fit: contain;
+                object-position: center;
+                padding: 20px;
+                background-color: #fff;
+                overflow: hidden;
+                border: 1px solid #fffF;
+                transition: all ease 0.3s;
+            }
+            .category-box span{
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 600;
+                color: #0099ff;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+            .category-box:hover img{
+                transform: scale(1.02);
+                transition: all ease 0.2s;
+                box-shadow:2px 2px 30px;
+            }
+            .pheading{
+                text-align:center;
+                margin:50px;
+                color: black;
+            }
+            .sec{
+                padding: 10px 5%;
+            }
+
+            .product{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+            }
+            .product .card{
+                width: 310px;
+                background: #ffff;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                border-radius: 5px;
+                padding: 5px;
+                margin-bottom: 20px;
+            }
+            .product .card img{
+                height: 250px;
+                width: 100%;
+            }
+            .product .card .title{
+                font-weight: 900;
+                font-size: 20px;
+                color: black;
+                padding: 0 20px;
+            }
+
+            .product .card .box{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+            }
+            .product .card .box .price{
+                color: #0099ff;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .product .card .box .btn{
+                font-size: 13px;
+                color: #0099ff;
+                padding: 10px 18px;
+                font-weight: 900;
+                border: 1px solid #0099ff;
+                border-radius: 20px;
+                background-color: #fffF;
+            }
+            .product .card .box .btn:hover{
+                cursor: pointer;
+                background-color: #0099ff;
+                color: #ffff;
+            }
+            .body3{
+                line-height: 1.5;
+                font-family: 'Poppins', sans-serif;
+                margin:0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .container{
+                max-width: 1700px;
+                margin:auto;
+            }
+            ul{
+                list-style: none;
+            }
+            .footer{
+                background-color: #ffff;
+                padding: 70px 0;
+            }
+            .footer-col{
+                width: 25%;
+                padding: 0 15px;
+            }
+            .row{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .footer-col h4{
+                font-size: 18px;
+                color:#0099ff;
+                text-transform: capitalize;
+                margin-bottom: 35px;
+                font-weight: 500;
+                position: relative;
+            }
+            .footer-col h4::before{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                background-color: black;
+                height: 2px;
+                box-sizing: border-box;
+                width:50px
+            }
+            .footer-col ul li:not(:last-child){
+                margin-bottom: 10px;
+            }
+            .footer-col ul li a{
+                font-size: 16px;
+                text-transform: capitalize;
+                color: black;
+                text-decoration: none;
+                font-weight: 300;
+                display: block;
+                transition: all 0.3s ease;
+            }
+            .footer-col ul li a:hover{
+                color: #0099ff;
+                padding-left: 8px;
+            }
+            .footer-col .social-links a{
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                margin-right: 0 10px 10px 0;
+                text-align:center;
+                line-height: 40px;
+                border-radius: 50%;
+                color: black;
+                transition: all 0.5s ease;
+                font-size: 30px;
+            }
+            .footer-col .social-links a:hover{
+                color: #0099ff;
+            }
+    </style>
+ 
+    </head>
+    <body>
+        <nav>
+            <div class="icon"><img src="../Img/logo-blue_140x@2x.avif" width="100" height="60"><b style=" color: #0033cc">Toku</b>llectibles</div>
+            <div class="search_box">
+                <input type="search" placeholder="Search...">
+                <span class="fa fa-search"></span>
+            </div>
+            <ol>
+                <li><a href="Trang chủ.html">Trang chủ</a></li>
+                <li><a href="Giới thiệu.html">Giới thiệu</a></li>
+                <li><a href="Sản phẩm.html">Sản phẩm</a></li>
+                <li><a href="Liên hệ.html">Liên hệ</a></li>
+            </ol>
+        </nav>
+            <div class="body2">
+            <div class="slider">
+                <div class="slides">
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                <div class="slide first">
+                    <img src="../Img/1.jpeg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Img/2.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Img/3.jpeg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Img/4.jpg" alt="">
+                    </div>
+                <div class="nav-auto">
+                    <div class="auto1"></div>
+                    <div class="auto2"></div>
+                    <div class="auto3"></div>
+                    <div class="auto4"></div>
+                </div>
+                <div class="nav_manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+                </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                var counter =1;
+                setInterval(function(){
+                    document.getElementById('radio' + counter).checked =true;
+                    counter ++;
+                    if(counter > 4){
+                        counter=1;
+                    }
+                },5000);
+            </script>
+        </div>
+        <section id="categories">
+            <h2>DANH MỤC</h2>
+            <div class="category-container">
+            <a href="#" class="category-box">
+                <img src="../Img/5.webp" alt="category">
+                <span>SH Figuarts</span>
+            </a>
+            <a href="#" class="category-box">
+                <img src="../Img/6.webp" alt="category">
+                <span>DX</span>
+            </a> 
+            <a href="#" class="category-box">
+                <img src="../Img/7.webp" alt="category">
+                <span>MECHA</span>
+            </a> 
+            <a href="#" class="category-box">
+                <img src="../Img/8.webp" alt="category">
+                <span>PLUSH</span>
+            </a>
+            </div>
+        </section>
+        <h1 class="pheading"> Sản phẩm mới nhất</h1>
+        <section class="sec">
+            <div class="product">
+                <div class="card">
+                    <div class="img"><img src="../Img/9.webp" alt=""></div>
+                    <div class="title">DX Glitter Blade</div>
+                    <div class="box">
+                        <div class="price">$34.00</div>
+                        <button class="btn">Buy now</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img"><img src="../Img/10.webp" alt=""></div>
+                    <div class="title">Don Murasame Plush</div>
+                    <div class="box">
+                        <div class="price">$24.00</div>
+                        <button class="btn">Buy now</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img"><img src="../Img/11.webp" alt=""></div>
+                    <div class="title">SH Figuarts Evil Trigger</div>
+                    <div class="box">
+                        <div class="price">$60.00</div>
+                        <button class="btn">Buy now</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img"><img src="../Img/24.webp" alt=""></div>
+                    <div class="title">DX GUTS Hawk</div>
+                    <div class="box">
+                        <div class="price">$45.00</div>
+                        <button class="btn">Buy now</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img"><img src="../Img/21.webp" alt=""></div>
+                    <div class="title">DX Zombie Breaker</div>
+                    <div class="box">
+                        <div class="price">$69.00</div>
+                        <button class="btn">Buy now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <h1 class="pheading"> Sản phẩm phổ biến</h1>
+        <section class="sec">
+            <div class="product">
+                <div class="card">
+                    <div class="img"><img src="../Img/27.webp" alt=""></div>
+                    <div class="title">Minipla Black Onitaijin Murasame</div>
+                    <div class="box">
+                        <div class="price">$32.00</div>
+                        <button class="btn">Buy now</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img"><img src="../Img/15.webp" alt=""></div>
+                    <div class="title">RKF Kamen Rider Blades King Lion DaiSenki</div>
+                    <div class="box">
+                        <div class="price">$33.00</div>
+                        <button class="btn">Buy now</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img"><img src="../Img/16.webp" alt=""></div>
+                    <div class="title">SH Figuarts Kamen Rider Grand Zi-O</div>
+                    <div class="box">
+                        <div class="price">$76.00</div>
+                        <button class="btn">Buy now</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img"><img src="../Img/22.webp" alt=""></div>
+                    <div class="title">Kome Kome (Girl Version) Cure Friends Plush Doll</div>
+                    <div class="box">
+                        <div class="price">$34.00</div>
+                        <button class="btn">Buy now</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img"><img src="../Img/18.webp" alt=""></div>
+                    <div class="title">Cang Toys CT-CHIYOU CY-06 HugeRhino</div>
+                    <div class="box">
+                        <div class="price">$65.00</div>
+                        <button class="btn">Buy now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="body3">
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>chính sách</h4>
+                        <ul>
+                            <li><a href="#">chính sách bảo hành</a></li>
+                            <li><a href="#">chính sách giao hành</a></li>
+                            <li><a href="#">chính sách thanh toán</a></li>
+                            <li><a href="#">chính sách bảo mật</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Giới thiệu</h4>
+                        <ul>
+                            <li><a href="#">Giới thiệu Tokullectibles</a></li>
+                            <li><a href="#">Điều khoản dịch vụ</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>liên hệ</h4>
+                        <ul>
+                            <li>Email: <a href="#">orders@tokullector.com</a></li>
+                            <li>Gọi mua hàng <a href="#">1900 4323</a></li>
+                            <li>Hỗ trợ khách hàng <a href="#">1900 3326</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Theo dõi chúng tôi trên</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        </div>
+    </body>
+</html>
